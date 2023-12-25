@@ -52,20 +52,18 @@ main{
 }
 
 article{
-    /* border: 1px solid red; */
     padding: 15px 30px;
 }
 article h2{
-    padding-left: 15px;
     font-size: 2em;
     font-weight: bold;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.233);
-    /* border: 1px solid yellow; */
 }
 article p{
     text-align: justify;
     text-indent: 2em;
     font-size: 1.2em;
+    margin: 5px 0;
 }
 .author{
     text-align: end;
@@ -76,9 +74,8 @@ article p{
 img{
     display: block;
     margin: auto;
-    padding: 15px;
+    padding: 15px 0;
     width: 100%;
-    border-radius: 15px;
 }
 
 footer{
