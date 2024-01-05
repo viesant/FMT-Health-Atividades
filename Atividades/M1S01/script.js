@@ -1,11 +1,9 @@
 // listener mudar cor cabeçalho
 let header = document.getElementById('iHeader');
 header.addEventListener("mouseenter", () =>{
-    console.log("mouse entrou");
     header.style.backgroundColor = 'rgb(48, 43, 43)';
 })
 header.addEventListener("mouseleave", () =>{
-    console.log("mouse saiu");
     header.style.backgroundColor = 'black';
 })
 
