@@ -1,4 +1,39 @@
-ul{
-    padding: 0;
-    list-style-type: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 250px;
+  margin: auto;
+}
+header {
+  /* text-align: center; */
+  /* height: 80px; */
+  padding: 35px 0 10px;
+  text-align: center;
+  /* margin: auto; */
+}
+#inputArea {
+  /* border: 2px dotted purple; */
+  padding: 10px 3px;
+  text-align: center;
+}
+/* #listArea {
+  /* border: 2px dotted green;
+} */
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+li {
+  /* border: 1px solid yellow; */
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.delete {
+  padding: 4px;
 }
