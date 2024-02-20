@@ -8,11 +8,9 @@ body {
   margin: auto;
 }
 header {
-  /* text-align: center; */
-  /* height: 80px; */
+
   padding: 35px 0 10px;
   text-align: center;
-  /* margin: auto; */
 }
 #inputArea {
   /* border: 2px dotted purple; */
