@@ -8,7 +8,6 @@ body {
   margin: auto;
 }
 header {
-
   padding: 35px 0 10px;
   text-align: center;
 }
@@ -17,21 +16,30 @@ header {
   padding: 10px 3px;
   text-align: center;
 }
-/* #listArea {
-  /* border: 2px dotted green;
-} */
 
 ul {
   padding: 0;
   list-style-type: none;
 }
 li {
-  /* border: 1px solid yellow; */
   padding: 4px 8px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 6px;
+}
+li label {
+  text-decoration: none; 
+  flex-grow: 2;
+}
+
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through; 
+  color: rgba(0, 0, 0, 0.516);
 }
 .delete {
-  padding: 4px;
+  border: none;
+  background-color: transparent;
+}
+.delete:hover {
+  cursor: pointer;
 }
