@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 250px;
+  margin: auto;
+}
+header {
+  padding: 35px 0 10px;
+  text-align: center;
+}
+#inputArea {
+  /* border: 2px dotted purple; */
+  padding: 10px 3px;
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+li {
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+li label {
+  text-decoration: none; 
+  flex-grow: 2;
+}
+
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through; 
+  color: rgba(0, 0, 0, 0.516);
+}
+.delete {
+  border: none;
+  background-color: transparent;
+}
+.delete:hover {
+  cursor: pointer;
+}
