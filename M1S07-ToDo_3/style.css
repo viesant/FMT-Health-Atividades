@@ -28,15 +28,19 @@ li {
   gap: 6px;
 }
 li label {
-  text-decoration: none; 
-  flex-grow: 2;
+  text-decoration: none;
+  /* flex-grow: 2; */
+}
+li label:hover {
+  cursor: pointer;
 }
 
 input[type="checkbox"]:checked + label {
-  text-decoration: line-through; 
+  text-decoration: line-through;
   color: rgba(0, 0, 0, 0.516);
 }
 .delete {
+  margin-left: auto;
   border: none;
   background-color: transparent;
 }
