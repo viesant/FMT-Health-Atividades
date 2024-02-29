@@ -45,7 +45,6 @@ input[type="text"] {
 }
 
 #listArea {
-  /* padding: 10px 3px; */
   margin-top: 20px;
   text-align: center;
 }
@@ -55,11 +54,11 @@ ul {
   list-style-type: none;
 }
 li {
+  word-wrap: break-word;
   background-color: #ffffffcc;
   width: 100%;
   padding: 4px 8px;
   display: flex;
-  align-items: center;
   gap: 6px;
   border-radius: 5px;
   margin-bottom: 1px;
@@ -67,7 +66,9 @@ li {
   font-size: 1.3em;
 }
 li label {
+  align-items: center;
   text-decoration: none;
+  text-align: left;
 }
 li label:hover {
   cursor: pointer;
