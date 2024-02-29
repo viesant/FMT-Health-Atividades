@@ -1,24 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 body {
-  width: 250px;
+  background-color: #1f1f2f;
+}
+main {
+  width: 350px;
   margin: auto;
-  border: 1px solid;
+  /* margin-top: 35px;
+  border-radius: 15px; */
 }
 header {
-  padding: 35px 0 10px;
-  text-align: center;
+  margin-top: 35px;
+  text-align: left;
+  color: #ffffff;
 }
 #inputArea {
-  /* border: 2px dotted purple; */
-  padding: 10px 3px;
+  max-width: 100%;
+  margin: auto;
+  margin-top: 10px;
+  background-color: #ffffffcc;
+  border-radius: 5px;
   text-align: center;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
 }
+input[type="text"] {
+  background-color: transparent;
+  width: 90%;
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+  font-size: 1.3em;
+  color: #1f1f2f;
+}
+#btNewTask {
+  font-size: 1em;
+}
+
 #listArea {
-  padding: 10px 3px;
+  /* padding: 10px 3px; */
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -27,14 +55,19 @@ ul {
   list-style-type: none;
 }
 li {
+  background-color: #ffffffcc;
+  width: 100%;
   padding: 4px 8px;
   display: flex;
   align-items: center;
   gap: 6px;
+  border-radius: 5px;
+  margin-bottom: 1px;
+  color: #1f1f2f;
+  font-size: 1.3em;
 }
 li label {
   text-decoration: none;
-  /* flex-grow: 2; */
 }
 li label:hover {
   cursor: pointer;
@@ -44,11 +77,20 @@ input[type="checkbox"]:checked + label {
   text-decoration: line-through;
   color: rgba(0, 0, 0, 0.516);
 }
-.delete {
+button {
   margin-left: auto;
   border: none;
   background-color: transparent;
+  color: #1f1f2f;
+  font-size: 0.8em;
 }
-.delete:hover {
+button:hover {
   cursor: pointer;
+}
+
+#counterField {
+  text-align: end;
+  margin-top: 20px;
+  font-size: 0.8em;
+  color: #ffffffcc;
 }

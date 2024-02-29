@@ -3,10 +3,27 @@ const btNewTask = document.querySelector("#btNewTask");
 const taskList = document.querySelector("ul");
 const counterField = document.querySelector("#counter");
 btNewTask.addEventListener("click", addNewTask);
+newTaskField.addEventListener("keydown", testEnterKey);
 console.log(taskList);
 
 let taskId = 0;
 let taskCounter = 0;
+
+function testEnterKey(e) {
+  console.log(e.key);
+  console.log(e);
+
+  switch (e.key) {
+    case "Enter":
+      addNewTask();
+      break;
+    case "Escape":
+      newTaskField.value = "";
+      break;
+    default:
+      break;
+  }
+}
 
 function addNewTask() {
   // check se newTask está vazio
@@ -21,7 +38,9 @@ function addNewTask() {
 
   // cria html do item com checkbox, nome tarefa e botão excluir
   newList.innerHTML = `<input type="checkbox" name="" id="task${taskId}" /><label for="task${taskId}">${newTaskField.value}</label><button class="delete" type="button"><i class="fa-solid fa-trash"></i></button>`;
-
+// <i class="fa-solid fa-circle-check"></i>
+// <i class="fa-regular fa-circle-check"></i>
+// <i class="fa-regular fa-circle"></i>
   // inclui elemento no ul
   taskList.appendChild(newList);
 
@@ -50,8 +69,8 @@ function deleteTask(event) {
     taskToDelete.remove();
 
     // decrementa contador
-  taskCounter--;
-  // altera valor campo contador
-  counterField.innerHTML = taskCounter;
+    taskCounter--;
+    // altera valor campo contador
+    counterField.innerHTML = taskCounter;
   }
 }

@@ -6,49 +6,56 @@
     <title>To-do List</title>
     <link rel="stylesheet" href="style.css" />
     <script src="todoList.js" defer></script>
-    <script src="https://kit.fontawesome.com/01658c14b4.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/01658c14b4.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <header>
-      <h1>Lista de Tarefas</h1>
-    </header>
-
-    <div id="inputArea">
-      <input
-        type="text"
-        name="newTask"
-        id="newTask"
-        placeholder="Nova tarefa"
-      />
-      <button type="button" id="btNewTask">Adicionar</button>
-    </div>
-    <div id="listArea">
-      <ul>
-        <!-- <li>
-          <input type="checkbox" name="" id="item1" />
-          <label for="item1">
-            Estudar HTML e CSS
-          </label>
-          <button class="delete" type="button">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </li>
-        <li>
-          <input type="checkbox" name="" id="item3" />
-          <label for="item3">
-            Estudar Javascript
-          </label>
-          <button class="delete" type="button"><i class="fa-solid fa-trash"></i></button>
-        </li>
-        <li>
-          <input type="checkbox" name="" id="item4" />
-          <label for="item4">
-            Fazer exercícios
-          </label>
-          <button class="delete" type="button"><i class="fa-solid fa-trash"></i></button>
-        </li> -->
-      </ul>
-      <p>Quantidade de tarefas: <span id="counter">0</span> </p>
-    </div>
+    <main>
+      <header>
+        <h1>Lista de Tarefas</h1>
+      </header>
+      <div id="inputArea">
+        <input
+          type="text"
+          name="newTask"
+          id="newTask"
+          placeholder="Nova tarefa"
+          
+        />
+        <button type="button" id="btNewTask">
+          <i class="fa-solid fa-circle-plus"></i>
+        </button>
+      </div>
+      <div id="listArea">
+        <ul>
+          <!-- <li>
+            <input type="checkbox" name="" id="item1" />
+            <label for="item1"> Estudar HTML e CSS </label>
+            <button class="delete" type="button">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </li>
+          <li>
+            <input type="checkbox" name="" id="item3" />
+            <label for="item3"> Estudar Javascript </label>
+            <button class="delete" type="button">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </li>
+          <li>
+            <input type="checkbox" name="" id="item4" />
+            <label for="item4"> Fazer exercícios </label>
+            <button class="delete" type="button">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </li> -->
+        </ul>
+        <p id="counterField">
+          Quantidade de tarefas: <span id="counter">0</span>
+        </p>
+      </div>
+    </main>
   </body>
 </html>
