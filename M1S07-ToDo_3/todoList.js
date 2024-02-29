@@ -1,10 +1,12 @@
 const newTaskField = document.querySelector("#newTask");
 const btNewTask = document.querySelector("#btNewTask");
 const taskList = document.querySelector("ul");
+const counterField = document.querySelector("#counter");
 btNewTask.addEventListener("click", addNewTask);
 console.log(taskList);
 
 let taskId = 0;
+let taskCounter = 0;
 
 function addNewTask() {
   // check se newTask está vazio
@@ -31,6 +33,11 @@ function addNewTask() {
 
   // cria eventlistener pro novo novo botão excluir
   deleteButton.addEventListener("click", deleteTask);
+
+  // incrementa contador
+  taskCounter++;
+  // altera valor campo contador
+  counterField.innerHTML = taskCounter;
 }
 
 function deleteTask(event) {
@@ -41,5 +48,10 @@ function deleteTask(event) {
     const taskToDelete = event.target.closest("li");
     // apaga item
     taskToDelete.remove();
+
+    // decrementa contador
+  taskCounter--;
+  // altera valor campo contador
+  counterField.innerHTML = taskCounter;
   }
 }

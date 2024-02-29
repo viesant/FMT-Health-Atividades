@@ -6,6 +6,7 @@
 body {
   width: 250px;
   margin: auto;
+  border: 1px solid;
 }
 header {
   padding: 35px 0 10px;
@@ -13,6 +14,10 @@ header {
 }
 #inputArea {
   /* border: 2px dotted purple; */
+  padding: 10px 3px;
+  text-align: center;
+}
+#listArea {
   padding: 10px 3px;
   text-align: center;
 }
