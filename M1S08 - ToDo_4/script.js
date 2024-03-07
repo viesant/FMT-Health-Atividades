@@ -14,9 +14,13 @@ function addNewTask() {
   };
 
   const taskList = getTaskList();
+  if (taskList.some((item) => item.task === newTask.task)) {
+    alert("Essa tarefa já existe!");
+    return;
+  }
   taskList.push(newTask);
 
-  localStorage.setItem("taskList", JSON.stringify(taskList));
+  setTaskList(taskList);
 }
 
 function getTaskList() {
@@ -26,4 +30,17 @@ function getTaskList() {
     return JSON.parse(tasks);
   }
   return [];
+}
+function setTaskList(taskList) {
+  localStorage.setItem("taskList", JSON.stringify(taskList));
+}
+
+function toggleTaskStatus(taskToChange) {
+  const taskList = getTaskList();
+  taskList.forEach((item) => {
+    if (item.task === taskToChange) {
+      item.done = !item.done;
+    }
+  });
+  setTaskList(taskList);
 }
