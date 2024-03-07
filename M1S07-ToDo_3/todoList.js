@@ -32,12 +32,14 @@ function addNewTask() {
   }
   // incrementa id da nova task
   taskId++;
-
+function olhaCheck(e){
+  console.log(e)
+}
   // cria novo elemento list
   let newList = document.createElement("li");
 
   // cria html do item com checkbox, nome tarefa e botão excluir
-  newList.innerHTML = `<input type="checkbox" name="" id="task${taskId}" /><label for="task${taskId}">${newTaskField.value}</label><button class="delete" type="button"><i class="fa-solid fa-trash"></i></button>`;
+  newList.innerHTML = `<input type="checkbox" name="" id="task${taskId}" onclick="olhaCheck()" /><label for="task${taskId}">${newTaskField.value}</label><button class="delete" type="button"><i class="fa-solid fa-trash"></i></button>`;
 // <i class="fa-solid fa-circle-check"></i>
 // <i class="fa-regular fa-circle-check"></i>
 // <i class="fa-regular fa-circle"></i>
