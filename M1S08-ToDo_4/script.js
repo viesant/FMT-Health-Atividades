@@ -1,38 +1,57 @@
 const newTaskField = document.querySelector("#newTask");
-const btAdd = document.querySelector("#btAddNewTask");
-const taskListField = document.querySelector("#taskList");
+const btNewTask = document.querySelector("#btNewTask");
+const taskList = document.querySelector("ul");
+const counterFinished = document.querySelector("#counterFinished");
+const counterTotal = document.querySelector("#counterTotal");
 
-btAdd.addEventListener("click", addNewTask);
+btNewTask.addEventListener("click", addNewTask);
+newTaskField.addEventListener("keydown", (e) => {
+  switch (e.key) {
+    case "Enter":
+      addNewTask();
+      break;
+    case "Escape":
+      newTaskField.value = "";
+      break;
+    default:
+      break;
+  }
+});
 
 function addNewTask() {
-  if (!newTaskField.value) {
-    alert("campo vazio");
+  // check se newTask está vazio
+  if (newTaskField.value === "") {
     return;
   }
+
   let newTask = {
     task: newTaskField.value,
     done: false,
   };
 
-  const taskList = getTaskList();
+  const tasks = getTaskList();
 
-  if (taskList.some((item) => item.task === newTask.task)) {
+  if (tasks.some((item) => item.task === newTask.task)) {
     alert("Essa tarefa já existe!");
     return;
   }
 
-  taskList.push(newTask);
+  tasks.push(newTask);
 
-  setTaskList(taskList);
+  setTaskList(tasks);
+  newTaskField.value = "";
   renderTaskList();
 }
 
 function deleteTask(taskToDelete) {
-  let taskList = getTaskList();
-  taskList = taskList.filter((item) => item.task != taskToDelete);
+  let doDelete = confirm("Deseja apagar a tarefa da lista?");
+  if (doDelete) {
+    let tasks = getTaskList();
+    tasks = tasks.filter((item) => item.task != taskToDelete);
 
-  setTaskList(taskList);
-  renderTaskList();
+    setTaskList(tasks);
+    renderTaskList();
+  }
 }
 
 function toggleTaskStatus(taskToChange) {
@@ -60,12 +79,37 @@ function setTaskList(taskList) {
 }
 
 function renderTaskList() {
-  taskList = getTaskList();
-  taskListField.innerHTML = "";
-  taskList.forEach((item) => {
-    let li = `<li>${item.task}</li>`;
-    taskListField.innerHTML += li;
+  tasks = getTaskList();
+  taskList.innerHTML = "";
+  tasks.forEach((item) => {
+    let li = `<li>
+      <input 
+       type="checkbox" 
+       name="" 
+       id="${item.task}" 
+       ${item.done ? "checked" : ""}
+       onclick="toggleTaskStatus('${item.task}')"
+      />
+      <label for="${item.task}">
+        ${item.task}
+      </label>
+      <button
+       class="delete"
+       type="button"
+       onclick="deleteTask('${item.task}')"
+      >
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </li>`;
+    taskList.innerHTML += li;
   });
+
+  const doneTasks = tasks.filter((item) => item.done);
+  // altera valor campo contador finalizadas
+  counterFinished.innerHTML = doneTasks.length;
+
+  // altera valor campo contador total
+  counterTotal.innerHTML = tasks.length;
 }
 
 renderTaskList();
