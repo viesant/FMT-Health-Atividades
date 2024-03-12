@@ -2,6 +2,7 @@ const newTaskField = document.querySelector("#newTask");
 const btNewTask = document.querySelector("#btNewTask");
 const taskList = document.querySelector("ul");
 const counterField = document.querySelector("#counter");
+
 btNewTask.addEventListener("click", addNewTask);
 newTaskField.addEventListener("keydown", testEnterKey);
 console.log(taskList);
@@ -24,6 +25,9 @@ function testEnterKey(e) {
       break;
   }
 }
+function olhaCheck(e){
+  console.log(e)
+}
 
 function addNewTask() {
   // check se newTask está vazio
@@ -32,9 +36,6 @@ function addNewTask() {
   }
   // incrementa id da nova task
   taskId++;
-function olhaCheck(e){
-  console.log(e)
-}
   // cria novo elemento list
   let newList = document.createElement("li");
 
