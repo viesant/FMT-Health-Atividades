@@ -1,13 +1,25 @@
 <div>
-  <form>
-    <label for="email">Usuário:</label>
-    <input type="email" name="email" id="email" />
+  <form (ngSubmit)="entrar()">
+    <label for="user-email">Usuário:</label>
+    <input
+      type="email"
+      name="user-email"
+      id="user-email"
+      placeholder="Digite seu email cadastrado"
+      [(ngModel)]="login.emailUsuario"
+    />
     <br />
-    <label for="password">Senha:</label>
-    <input type="password" name="password" id="password" />
+    <label for="user-password">Senha:</label>
+    <input
+      type="password"
+      name="user-password"
+      id="user-password"
+      placeholder="Digite sua senha"
+      [(ngModel)]="login.senha"
+    />
     <br />
-    <button type="button">Entrar</button>
-    <button type="button">Esqueci a senha</button>
+    <button type="submit">Entrar</button>
+    <button type="button" (click)="resetarSenha()">Esqueci a senha</button>
     <br />
     <a href="cadastro">Criar conta</a>
   </form>
