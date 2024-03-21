@@ -1,9 +1,8 @@
-<div>
-  <h2>Cadastro</h2>
-  <p>Campos com * são obrigatórios</p>
-  <form (ngSubmit)="cadastrar()" #cadastro="ngForm">
+<div class="cadastro-container">
+  <form class="cadastro-form" (ngSubmit)="cadastrar()" #cadastro="ngForm">
+    <h2>Cadastro</h2>
+    <p>Campos com * são obrigatórios</p>
     <label for="nome">Nome completo *</label>
-    <br />
     <input
       type="text"
       name="nome"
@@ -11,9 +10,7 @@
       required
       [(ngModel)]="newUser.nome"
     />
-    <br />
     <label for="email">Email para cadastro *</label>
-    <br />
     <input
       type="email"
       name="email"
@@ -22,18 +19,14 @@
       email
       [(ngModel)]="newUser.email"
     />
-    <br />
     <label for="nascimento">Data de nascimento</label>
-    <br />
     <input
       type="date"
       name="nascimento"
       id="nascimento"
       [(ngModel)]="newUser.nascimento"
     />
-    <br />
     <label for="senha">Digite uma senha *</label>
-    <br />
     <input
       type="password"
       name="senha"
@@ -41,9 +34,7 @@
       [(ngModel)]="newUser.senha"
       required
     />
-    <br />
     <label for="confirmaSenha">Confirme a senha *</label>
-    <br />
     <input
       type="password"
       name="confirmaSenha"
@@ -51,7 +42,6 @@
       [(ngModel)]="newUser.confirmaSenha"
       required
     />
-    <br />
     <button type="submit" [disabled]="!cadastro.valid">Cadastrar</button>
     <button type="button" (click)="voltar()">Voltar</button>
   </form>
