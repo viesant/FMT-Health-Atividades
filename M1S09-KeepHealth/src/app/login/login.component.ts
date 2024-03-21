@@ -10,16 +10,6 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  // tempUsers = [
-  //   { user: 'user1@gmail.com', password: '1234' },
-  //   { user: 'user2@gmail.com', password: 'abcd' },
-  //   { user: 'user3@gmail.com', password: '1111' },
-  //   { user: 'user4@gmail.com', password: 'aaaa' },
-  //   { user: 'user5@gmail.com', password: 'cccc' },
-  // ];
-  // constructor() {
-  //   localStorage.setItem('listaUsuarios', JSON.stringify(this.tempUsers));
-  // }
   constructor(private router: Router) {}
 
   login = {
@@ -33,9 +23,9 @@ export class LoginComponent {
     if (!!listaUsuariosString) {
       const listaUsuarios = JSON.parse(listaUsuariosString);
       const achouUsuario = listaUsuarios.find(
-        (usuario: { user: string; password: string }) =>
-          usuario.user === this.login.emailUsuario &&
-          usuario.password === this.login.senha
+        (usuario: { email: string; senha: string }) =>
+          usuario.email === this.login.emailUsuario &&
+          usuario.senha === this.login.senha
       );
       if (achouUsuario) {
         console.log('achou', achouUsuario);
@@ -52,33 +42,24 @@ export class LoginComponent {
     const listaUsuariosString = localStorage.getItem('listaUsuarios');
 
     if (!!listaUsuariosString) {
+      let achouUser = false;
       const listaUsuarios = JSON.parse(listaUsuariosString);
-      listaUsuarios.forEach((usuario: { user: string; password: string }) => {
-        if (usuario.user === this.login.emailUsuario) {
-          usuario.password = 'a1b2c4d4';
+      listaUsuarios.forEach((usuario: { email: string; senha: string }) => {
+        if (usuario.email === this.login.emailUsuario) {
+          usuario.senha = 'a1b2c3d4';
+          alert('Senha atualizada para a1b2c3d4');
+          achouUser = true;
         }
       });
+      if (!achouUser) {
+        alert('Usuário não encontrado');
+      }
       localStorage.setItem('listaUsuarios', JSON.stringify(listaUsuarios));
     } else {
       alert('Nenhum usuário cadastrado, crie nova conta');
     }
   }
-
-  // class User {
-  //   #login;
-  //   #password;
-  //   constructor(login: string, password: string){
-  //     this.#login = login;
-  //     this.#password = password;
-  //   }
-  //   get login(){
-  //     return this.#login
-  //   }
-  //   get password(){
-  //     return this.#password
-  //   }
-  //   set password(password){
-  //     this.#password = password;
-  //   }
-  // }
+  cadastrar() {
+    this.router.navigate(['cadastro']);
+  }
 }
