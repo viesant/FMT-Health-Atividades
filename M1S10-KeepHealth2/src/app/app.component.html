@@ -1,6 +1,11 @@
-<button hidden (click)="gravarDados()" type="button">
+<button (click)="gravarDadosAlimentos()" type="button">
   Gravar dados alimentos
 </button>
+<button (click)="gravarDadosActiveUser()" type="button">
+  Gravar dados activeUser
+</button>
+<app-header></app-header>
+<app-sidebar></app-sidebar>
 <div>
   <router-outlet />
 </div>

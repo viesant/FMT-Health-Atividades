@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [RouterOutlet, HeaderComponent, SidebarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -103,10 +104,22 @@ export class AppComponent {
       imageLink: 'link_para_imagem',
     },
   ];
+  activeUser = {
+    nome: 'Ricardo',
+    email: 'teste@gmail.com',
+    peso: 70.5,
+    altura: 174,
+    codigoDoUsuario: 3,
+    idade: 37,
+  };
+
   constructor() {}
   ngOnInit(): void {}
 
-  gravarDados() {
+  gravarDadosAlimentos() {
     localStorage.setItem('alimentos', JSON.stringify(this.alimentos));
+  }
+  gravarDadosActiveUser() {
+    localStorage.setItem('activeUser', JSON.stringify(this.activeUser));
   }
 }

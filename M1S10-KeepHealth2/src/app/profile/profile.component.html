@@ -1,1 +1,18 @@
-<p>profile works!</p>
+<div>
+  <p>Nome: {{ activeUser.nome }}</p>
+  <p>Email: {{ activeUser.email }}</p>
+  <p>Código usuário: {{ activeUser.codigoDoUsuario }}</p>
+  <p>Idade: {{ activeUser.idade }} anos</p>
+  <p>Peso: {{ activeUser.peso }} kg</p>
+  <p>Altura: {{ 160 | cmToMeter }} m</p>
+  <p>Localização:</p>
+  <p>
+    <input
+      type="text"
+      placeholder="Digite seu CEP"
+      minlength="8"
+      maxlength="8"
+    />
+    <input type="button" value="Pesquisar" />
+  </p>
+</div>
