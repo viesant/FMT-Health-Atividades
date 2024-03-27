@@ -1,0 +1,24 @@
+<div class="login-container">
+  <form class="login-form" (ngSubmit)="entrar()">
+    <h2>Bem-vindo de volta!</h2>
+    <label for="user-email">Email:</label>
+    <input
+      type="email"
+      name="user-email"
+      id="user-email"
+      placeholder="Digite seu email cadastrado"
+      [(ngModel)]="login.emailUsuario"
+    />
+    <label for="user-password">Senha:</label>
+    <input
+      type="password"
+      name="user-password"
+      id="user-password"
+      placeholder="Digite sua senha"
+      [(ngModel)]="login.senha"
+    />
+    <button type="submit">Entrar</button>
+    <button type="button" (click)="resetarSenha()">Esqueci a senha</button>
+    <button type="button" (click)="cadastrar()">Cadastrar</button>
+  </form>
+</div>
